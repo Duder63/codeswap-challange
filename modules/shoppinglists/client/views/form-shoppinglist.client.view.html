@@ -1,0 +1,84 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.shoppinglist._id ? 'Edit Shoppinglist' : 'New Shoppinglist'}}</h1>
+  </div>
+  <div class="col-md-12">
+      <form name="vm.form.shoppinglistForm" class="form-horizontal" ng-submit="vm.save(vm.form.shoppinglistForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Name:</label>
+          <input name="name" type="text" ng-model="vm.shoppinglist.name" id="name" class="form-control" placeholder="Enter Name" ng-style="{color: vm.shoppinglist.color}" required>
+          <div ng-messages="vm.form.shoppinglistForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Shoppinglist name is required.</p>
+          </div>
+        </div>
+      <div class="form-group col-md-3" style="margin-right:30px">
+             <label class="control-label" for="color-picker">Color:</label>
+             <input type="color" name="color-picker" ng-model="vm.shoppinglist.color" class="form-control" />
+           </div>
+           <div class="form-group col-md-3 col-md-offset-1">
+             <label class="control-label" for="color">Please input color hex code</label>
+             <input name="color" type="text"  id="color" class="form-control" ng-model="vm.shoppinglist.color" required />
+           </div>
+     
+
+        <div class="form-group">
+          <button type="submit" class="savelistform btn btn-primary">{{vm.shoppinglist._id ? 'Save List' : 'Save List'}}</button>
+                    
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+
+  <!-- <div class="col-md-6">
+    <form  name="vm.form.shoppinglistcontentForm" ng-submit="vm.addContent(vm.form.shoppinglistcontentForm.$valid)" class="form-horizontal"  novalidate>
+      
+      <fieldset>
+        <div class="form-group">  
+          <label class="control-label" for="shoppinglistcontent">Item:</label>
+            <input name="content" type="text" ng-model="vm.shoppinglist.content" id="content" class="form-control" placeholder="Enter Item" ng-style="{color: vm.shoppinglist.color}">
+        </div>
+        <div class="form-group">    
+              <h3>Priority: </h3>
+          <select ng-model="vm.shoppinglist.priority" class="form-control" id="priority" ng-style="{color: vm.shoppinglist.color}">
+            <option value="" disabled selected>Select a priority</option>
+            <option>It can wait</option>
+            <option>Need it soon</option>
+            <option>Grab it now!</option>
+          </select>
+      </div>   
+          <div class="form-group"> 
+            <button type="submit" class="btn btn-primary">Add Item</button>
+          </div>  
+          
+        </fieldset>  
+      </form>    
+    </div>
+
+     <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading"><strong>Shopping List:</strong></div>
+            <div class="panel-body">
+              <ul>
+                <li ng-repeat="content in vm.contentList" ng-style="{color: vm.shoppinglist.color}">
+           
+                  {{content.content}} : {{content.priority}}
+                  
+                 
+                </li> 
+              </ul>
+             
+        
+            </div>
+      
+          </div>  
+    
+      </div>
+ -->
+  
+</section>
+

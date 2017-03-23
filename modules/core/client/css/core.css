@@ -1,0 +1,188 @@
+/*Turner's CSS*/
+
+body {
+  background-image: url("http://www.psdgraphics.com/file/titanium-texture.jpg");
+}
+
+h1 {
+  color: white;
+}
+
+label {
+  color: white;
+}
+
+.priorityh3 {
+  color: white;
+}
+
+.thcontent {
+  background-color: #404040;
+  color: white;
+}
+
+.thnotes {
+  background-color: #404040;
+  color: white;
+}
+
+.thoptions {
+  background-color: #404040;
+  color: white;
+}
+
+.thpriority {
+  background-color: #404040;
+  color: white;
+}
+
+.thitems {
+  background-color: #404040;
+  color: white;
+}
+
+.trcolor {
+  background-color: white;
+}
+
+.table {
+  font-size: 20px;
+  font-family: 'Baloo Bhaina', cursive;
+}
+
+.jumbotron {
+  background-image: url("http://www.androidguys.com/wp-content/uploads/2013/03/notebook_wallpaper_by_luccaspaivasilva-d4ilz0b.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  font-family: 'Baloo Bhaina', cursive;
+}
+
+.deleteicon{
+  background-image: url("https://cdn1.iconfinder.com/data/icons/ui-5/502/trash-512.png");
+  width: 20px;
+  height: 20px;
+  float: center;
+
+}
+
+.savelistform{
+  position: absolute;
+  float: left;
+  left: 1px;
+  top: 155px;
+}
+
+.emfont {
+  color: white;
+}
+
+.addList {
+  float: right;
+}
+
+.back {
+  float: right;
+}
+
+.content {
+  margin-top: 50px;
+}
+
+.clear {
+  float: bottom;
+}
+
+.name {
+  resize: vertical;
+  height: 34px;
+  border-radius: 4px;
+  background: white;
+  border: 1px solid #ccc;
+  margin-left: 0px;
+}
+
+.priority {
+  resize: vertical;
+  height: 34px;
+  border-radius: 4px;
+  background: white;
+  border: 1px solid #ccc;
+  margin-left: 0px;
+  float: right;
+}
+
+.color {
+  resize: vertical;
+  height: 34px;
+  border-radius: 4px;
+  background: white;
+  border: 1px solid #ccc;
+  margin-left: 0px;
+}
+
+.items {
+  resize: vertical;
+  height: 34px;
+  border-radius: 4px;
+  background: white;
+  border: 1px solid #ccc;
+  margin-left: 0px;
+}
+
+.split {
+  resize: horizontal;
+  resize: vertical;
+  height: 1px;
+  background-color: lightgray;
+  opacity: 90%;
+}
+
+.undecorated-link:hover {
+  text-decoration: none;
+}
+[ng\:cloak],
+[ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+.header-profile-image {
+  opacity: 0.8;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.open .header-profile-image,
+a:hover .header-profile-image {
+  opacity: 1;
+}
+.user-header-dropdown-toggle {
+  padding-top: 11px !important;
+  padding-bottom: 11px !important;
+}
+.error-text {
+  display: none;
+}
+.has-error .help-block.error-text {
+  display: block;
+}
+.has-error .help-inline.error-text {
+  display: inline;
+}
+/*create shopping lists page*/
+.list-heading {
+  display: inline-block;
+}
+.add-list {
+  float: right;
+}
+/*create list page*/
+.create-list-title {
+  display: inline-block;
+}
+.back-to-list {
+  float: right;
+}
+

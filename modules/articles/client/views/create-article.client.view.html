@@ -1,0 +1,30 @@
+<section ng-controller="ArticlesController">
+  <div class="page-header">
+      <h1 class="create-list-title"><strong>New</strong> Shopping List</h1>
+    <button class="back-to-list" <a ui-sref="articles.list">Back to List</a></button>
+  </div>
+  <div class="col-md-3">
+    <form name="articleForm" class="form-horizontal" ng-submit="create(articleForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label for="title">Name</label>
+          <input name="title" type="text" ng-model="title" id="title" class="form-control" placeholder="name" required>
+          <div ng-messages="articleForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">List name is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="content">Color</label>
+          <input name="color" type="text" ng-model="color" id="color" class="form-control" placeholder="Color">
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-default">
+        </div>
+        <div ng-show="error" class="text-danger">
+          <strong ng-bind="error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+</section>

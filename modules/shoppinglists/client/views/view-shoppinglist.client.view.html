@@ -1,0 +1,152 @@
+<section>
+  <div class="page-header">
+    <button class="back btn btn-default" ui-sref="shoppinglists.list({ shoppinglistId: shoppinglist._id })">Back to lists</button>
+    <h1 ng-bind="vm.shoppinglist.name" ng-style="{color: vm.shoppinglist.color}"></h1>
+    <small>
+    <em class="emfont text-muted">
+      Modified on 
+      <span ng-bind="vm.shoppinglist.modified | date:'MMM d, y h:mm:ss a'"></span>
+      by
+      <span ng-if="vm.shoppinglist.user"
+            ng-bind="vm.shoppinglist.user.displayName"></span>
+      <span ng-if="!vm.shoppinglist.user">Deleted User</span>
+    </em>
+    </small>
+  </div>
+
+ 
+
+<div class="col-md-12">
+    <form  name="vm.form.shoppinglistcontentForm" ng-submit="vm.addContent(vm.form.shoppinglistcontentForm.$valid)" class="form-horizontal"  novalidate>
+      
+      <fieldset>
+        <div class="form-group">  
+          <label class="control-label" for="shoppinglistcontent">Item:</label>
+            <input name="content" type="text" ng-model="vm.shoppinglist.content" id="content" class="form-control" placeholder="Enter Item" ng-style="{color: vm.shoppinglist.color}" required>
+        </div>
+        <div class="form-group">    
+          <h3 class="priorityh3">Priority: </h3>
+          <select ng-model="vm.shoppinglist.priority" class="form-control" id="priority" ng-style="{color: vm.shoppinglist.color}">
+
+            <option class="priorityinputfont" value="" disabled selected><i><b>Select a priority</i></b></option>
+            <option>It can wait</option>
+            <option>Need it soon</option>
+            <option>Grab it now!</option>
+          </select>
+        </div>   
+        <div class="form-group">
+          <label class="control-label" for="notes">Notes:</label>
+          <textarea ng-model="vm.shoppinglist.notes" class="form-control" id="notes" rows="10" ng-style="{color: vm.shoppinglist.color}"></textarea>
+        </div>
+        <div class="form-group"> 
+            <button type="submit" class="btn btn-primary">Add Item</button>
+        </div>  
+          
+        </fieldset>  
+      </form>    
+    </div>
+
+     <!-- <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading"><strong>Shopping List:</strong></div>
+            <div class="panel-body">
+              <ul>
+                <li ng-repeat="content in vm.contentList" ng-style="{color: vm.shoppinglist.color}">
+           
+                  {{content.content}} : {{content.priority}}
+                  
+                 
+                </li> 
+              </ul>
+              
+        
+            </div>
+      
+          </div>  
+    
+      </div> -->
+
+  <div class="pull-left">
+    <table class="table table-bordered table-hover" >
+      <tr>
+        <th class="thcontent"></th>
+        <th class="thitems">Items <button class="btn btn-primary" ng-click="order = 'content'">Order by Item</button></th>
+        <th class="thpriority">Priority <button class="btn btn-primary" ng-click="order = 'priority'">Order by Priority</button></th>
+        <th class="thnotes">Notes</th>
+        <th class="thoptions">Options</th>
+      </tr>
+      <tr class="trcolor" ng-repeat="content in vm.shoppinglist.contents | orderBy: order" ng-style="{color: vm.shoppinglist.color}">
+        <td>
+          <input type="checkbox" class="checkbox" ng-model="content.isChecked" />
+        </td>
+        <td>  
+          <span ng-class="{checked: content.isChecked}">{{ content.content }} </span>
+        </td>
+        <td>{{ content.priority }}</td>
+        <td>{{ content.notes }}</td>  
+        <td>
+          <button class="deleteicon delete-button" ng-click="vm.deleteContent(content)" class="delete-icon"><img src="http://www.freeiconspng.com/uploads/remove-icon-png-24.png" height="30px" width="30px"></button>
+        </td>
+        
+      </tr>  
+    </table>
+
+    <button ng-click="vm.deleteSelectedContent()" class="btn btn-default">Clear Selected Items</button>
+  
+   <!--  <ul >
+      <li ng-repeat="content in vm.shoppinglist.contents" >
+        {{content}}  {{priority}}
+      </li> 
+    </ul>   -->
+  </div>
+
+   <div class="pull-right">
+    
+    <a class="btn btn-primary"
+       ui-sref="shoppinglists.edit({ shoppinglistId: vm.shoppinglist._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+
+ 
+  
+  <!-- <small>
+    <em class="text-muted">
+      Created on
+      <span ng-bind="vm.shoppinglist.created | date:'MMM d, y h:mm:ss a'"></span>
+      by
+      <span ng-if="vm.shoppinglist.user"
+            ng-bind="vm.shoppinglist.user.displayName"></span>
+
+      <span ng-if="!vm.shoppinglist.user">Deleted User</span>
+    </em>
+  </small> -->
+<!--   <p class="lead" ng-bind="vm.shoppinglist.content"></p> -->
+
+<!-- Checkbox for content -->
+
+<!--   <div class="content">
+
+      <ul>
+      <li ng-repeat="content in vm.shoppinglist.contents">
+        <input type="checkbox" class="checkbox" ng-model="vm.shoppinglist.content.isChecked" />
+      <span ng-class="{'checked': vm.shoppinglist.content.isChecked}">{{ content.content }}
+      <span ng-click="deleteContent(i)" class="delete-icon">[X]
+        </li>
+        </ul>
+
+        <div class="mtop20">
+      <button ng-click="deleteSelectedContent()">Delete Selected
+      </div>
+
+  </div> -->
+
+</section>
+
+
+
+
+
