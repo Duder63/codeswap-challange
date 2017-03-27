@@ -4,11 +4,12 @@
   // Shoppinglists controller
   angular
     .module('shoppinglists')
+
     .controller('ShoppinglistsController', ShoppinglistsController);
 
-  ShoppinglistsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'shoppinglistResolve'];
+  ShoppinglistsController.$inject = ['$scope', '$sce', '$state', '$window', '$filter', 'Authentication', 'shoppinglistResolve'];
 
-  function ShoppinglistsController ($scope, $state, $window, Authentication, shoppinglist) {
+  function ShoppinglistsController ($scope, $sce, $state, $window, $filter, Authentication, shoppinglist) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -21,6 +22,30 @@
     vm.addContent = addContent;
     vm.deleteSelectedContent = deleteSelectedContent;
     vm.deleteContent = deleteContent;
+
+    var filterFilter = $filter('filter');
+
+    $scope.find = function(content, search) {
+      if(!content || !search) return false;
+      return content.toLowerCase().indexOf(search.toLowerCase()) >= 0;
+    };
+  
+    $scope.findViaFilter = function(content, search) {
+      if(!content || !search) return false;
+      return filterFilter([content], search).length > 0;
+    };    
+
+    // Search highlight text filter
+    $filter('highlight', function($sce){
+      return function(text, phrase) {
+        if (phrase) text = text.replace(new RegExp('(' + phrase + ')', 'gi'),
+          '<span class="highlightedText">$1</span>')
+
+        return $sce.trustAsHtml(text);
+        };
+
+      });
+
 
     // Remove existing Shoppinglist
     function remove() {

@@ -92,42 +92,45 @@ label {
   float: bottom;
 }
 
-.name {
-  resize: vertical;
-  height: 34px;
-  border-radius: 4px;
-  background: white;
-  border: 1px solid #ccc;
-  margin-left: 0px;
-}
-
-.priority {
-  resize: vertical;
-  height: 34px;
-  border-radius: 4px;
-  background: white;
-  border: 1px solid #ccc;
-  margin-left: 0px;
-  float: right;
-}
-
-.color {
-  resize: vertical;
-  height: 34px;
-  border-radius: 4px;
-  background: white;
-  border: 1px solid #ccc;
-  margin-left: 0px;
-}
-
+.name,
+.priority,
+.color,
 .items {
   resize: vertical;
   height: 34px;
   border-radius: 4px;
   background: white;
   border: 1px solid #ccc;
-  margin-left: 0px;
+  margin-left: 0;
 }
+
+.priority {
+/*  resize: vertical;
+  height: 34px;
+  border-radius: 4px;
+  background: white;
+  border: 1px solid #ccc;
+  margin-left: 0;*/
+  float: right;
+}
+
+/*.color {
+  resize: vertical;
+  height: 34px;
+  border-radius: 4px;
+  background: white;
+  border: 1px solid #ccc;
+  margin-left: 0;
+}*/
+
+/*.items {
+  resize: vertical;
+  height: 34px;
+  border-radius: 4px;
+  background: white;
+  border: 1px solid #ccc;
+  margin-left: 0;
+}*/
 
 .split {
   resize: horizontal;
@@ -185,4 +188,25 @@ a:hover .header-profile-image {
 .back-to-list {
   float: right;
 }
+
+
+/* for search filter */
+.highlightedText { 
+  background: yellow; 
+  color: black;
+}
+button.clearSearch-btn,
+button.clearSearch-btn:active   {
+  color: #999;
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: 0 4px 4px 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+button.clearSearch-btn:hover,
+button.clearSearch-btn:focus {
+  color: black;
+  background-color: #fff;
+}
+
 
