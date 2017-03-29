@@ -27,7 +27,9 @@
 
     $scope.find = function(content, search) {
       if(!content || !search) return false;
+      // console.log(content);
       return content.toLowerCase().indexOf(search.toLowerCase()) >= 0;
+
     };
   
     $scope.findViaFilter = function(content, search) {
@@ -35,16 +37,16 @@
       return filterFilter([content], search).length > 0;
     };    
 
-    // Search highlight text filter
-    $filter('highlight', function($sce){
-      return function(text, phrase) {
-        if (phrase) text = text.replace(new RegExp('(' + phrase + ')', 'gi'),
-          '<span class="highlightedText">$1</span>')
+    //Search highlight text filter
+    // $filter('highlight', function($sce){
+    //   return function(text, phrase) {
+    //     if (phrase) text = text.replace(new RegExp('(' + phrase + ')', 'gi'),
+    //       '<span class="highlightedText">$1</span>');
+    //       console.log(text);
+    //     return $sce.trustAsHtml(text);
+    //     };
 
-        return $sce.trustAsHtml(text);
-        };
-
-      });
+    //   });
 
 
     // Remove existing Shoppinglist

@@ -69,8 +69,8 @@
         <th class="thnotes">Notes</th>
         <th class="thoptions">Options</th>
       </tr>
-      <!-- <tr class="trcolor" ng-repeat="content in vm.shoppinglist.contents | filter: search | orderBy: order" ng-style="{color: vm.shoppinglist.color}" ng-bind-html-unsafe="content.content | highlight: search"> -->
-      <tr class="trcolor" ng-repeat="content in vm.shoppinglist.contents | filter: search | orderBy: order" ng-style="{color: vm.shoppinglist.color}" ng-class="{'highlightedText': find(content.content && content.notes, search)}">
+      <!-- <tr class="trcolor" ng-repeat="content in vm.shoppinglist.contents | filter: search | orderBy: order" ng-style="{color: vm.shoppinglist.color}" ng-bind-html-unsafe="content.content , content.notes | highlight: search"> -->
+      <tr class="trcolor" ng-repeat="content in vm.shoppinglist.contents | filter: search | orderBy: order" ng-style="{color: vm.shoppinglist.color}" ng-class="{'highlightedText': find(content.content, search) || findViaFilter(content.notes, search)}">
       <!-- <tr class="trcolor" ng-repeat="content in vm.shoppinglist.contents | filter: search | orderBy: order" ng-style="{color: vm.shoppinglist.color}" ng-class="{'highlightText': vm.content.content == search || vm.content.notes == search}"> -->
         <td>
           <input type="checkbox" class="checkbox" ng-model="content.isChecked" />
